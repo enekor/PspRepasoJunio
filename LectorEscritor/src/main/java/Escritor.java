@@ -14,6 +14,11 @@ public class Escritor extends Thread{
 
         for(int i = 0;i<repeticiones;i++){
             libro.escribir(this);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 }

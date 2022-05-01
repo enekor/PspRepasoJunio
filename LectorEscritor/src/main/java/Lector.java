@@ -14,6 +14,11 @@ public class Lector extends Thread{
 
         for(int i = 0;i<repeticiones;i++){
             libro.leer(this);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 }
